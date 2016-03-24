@@ -14,7 +14,7 @@
 
 
         
-        <link href="${pageContext.request.contextPath}css/style.css" rel="stylesheet" type="text/css"/>
+        <html:link href="${pageContext.request.contextPath}css/style.css" />
 
     </head>
 
