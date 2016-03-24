@@ -1,0 +1,148 @@
+
+#campo {
+    background-color: #049DBF;
+  
+    width: 50%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: serif;
+    
+}
+
+.abajo {
+    background-image: url(Downloaded/grande.jpg);    
+}
+
+.color {
+    background-color: #F1F2EB;
+    width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+}
+
+
+
+.fuente {
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    color: white;
+}
+
+
+
+
+
+.icono {
+    height: 3px;
+}
+
+
+
+
+
+
+
+.vete {
+    padding-left: 50%;
+}
+
+
+
+.espacio {
+    padding-right: 10%;
+    
+}
+
+.font {
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+}
+
+.color1 {
+     background-color: #F1F2EB;
+    width: 60%;
+    
+    padding-bottom: 5%;
+}
+
+#campo1 {
+     background-color: #049DBF;
+    width: 60%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: serif;
+}
+
+
+
+
+
+.abajo1 {
+    padding-top: 10%;
+}
+
+
+
+.navegacion {
+    padding: 10px;
+    background-color: #049DBF;
+    
+}
+
+.a {
+    color: white;
+    
+}
+
+
+
+.circular {
+     width: 250px; 
+    height: 250px; 
+    border-radius: 150px; 
+    -webkit-border-radius: 150px; 
+    -moz-border-radius: 150px; 
+    background: url(Downloaded/2414033.png) no-repeat; 
+}
+
+.fuentelogin {
+    font-family: 'Poiret One', cursive;
+    font-size: 50px;
+    color: white;
+}
+
+.abajologin {
+    padding-top: 5%;
+}
+
+.botonlogin {
+    padding-top: 3%;
+    
+}
+
+.admin {
+    padding-left: 65%;
+    color: white;
+}
+
+.derecha {
+    padding-left: 60%;
+}
+
+.fuenteadmin {
+    font-family: 'Poiret One', cursive;
+    color: black;
+    padding-top: 1%;
+    font-size: 30px;
+}
+
+
+
+.tamañoadmin {
+    width: 100%;
+    font-family: 'Poiret One', cursive;
+    color: black;
+    padding-top: 1%;
+    font-size: 30px;
+}

@@ -5,23 +5,18 @@
  */
 package com.myapp.struts;
 
-import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 /**
  *
- * @author SeijiPons
+ * @author Ivan
  */
-public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
+public class AdminStrutsAction extends org.apache.struts.action.Action {
 
-ResultSet result=null;
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
 
@@ -40,15 +35,6 @@ ResultSet result=null;
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        
-        Session s;
-        s=NewHibernateUtil.getSessionFactory().openSession();
-        Transaction trx=s.beginTransaction();      
-        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
-        Usuario us = new Usuario();
-        
-        
         return mapping.findForward(SUCCESS);
     }
-         
 }

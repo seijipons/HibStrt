@@ -17,74 +17,24 @@ import org.apache.struts.action.ActionMessage;
  */
 public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionForm {
 
-    private String cargo;
-    private int monto,tiempo;
-    public String getCargo() {
-        return cargo;
+   String usuario,password;
+
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
-    public int getTiempo() {
-        return tiempo;
+    public String getPassword() {
+        return password;
     }
 
-    public void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
-    public int getMonto() {
-        if(cargo.equals("Administrador")){
-            if(tiempo>=1&&tiempo<3){
-                 monto=2000;
-            }else if(tiempo<6&&tiempo>=3){
-                monto=2500;
-            }else if(tiempo>6&&tiempo<=8){
-                monto=3000;
-            }else if(tiempo>8){
-                monto=4000;
-            }
-            else{
-            monto=0;
-            }
-        }else if(cargo.equals("Contador")){
-            if(tiempo==1||tiempo<3){
-                 monto=1500;
-            }else if(tiempo<6&&tiempo>=3){
-                monto=2000;
-            }else if(tiempo>6&&tiempo<=8){
-                monto=2500;
-            }else if(tiempo>8){
-                monto=3500;
-            }
-            else{
-            monto=0;
-            }
-        }else if(cargo.equals("Empleado")){
-            if(tiempo==1||tiempo<3){
-                 monto=1000;
-            }else if(tiempo<6&&tiempo>=3){
-                monto=1500;
-            }else if(tiempo>6&&tiempo<=8){
-                monto=2000;
-            }else if(tiempo>8){
-                monto=2500;
-            }
-            else{
-            monto=0;
-            }
-        }
-        return monto;
-    }
-
-
-    public void setMonto(int monto) {
-        this.monto = monto;
-    }
-
-    
+   
     
     /**
      * @return
@@ -103,8 +53,12 @@ public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionF
      */
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
-        if (getTiempo()<0) {
-            errors.add("name", new ActionMessage("error.tiempoerror.required"));
+        if (getUsuario()== null) {
+            errors.add("usuario", new ActionMessage("error.usuarioerror.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getPassword()== null) {
+            errors.add("password", new ActionMessage("error.passworderror.required"));
             // TODO: add 'error.name.required' key to your resources
         }
         return errors;
