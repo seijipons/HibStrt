@@ -4,19 +4,46 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
 <html:form action="/utilidades" method="post"> 
-    
-    <html:link  page="css/estilo_particulas.css">
-  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-	
-	<title>K.I.R.A | EL FUTURO ES NUESTRO</title>
+    <head>
+        <html:link  href="css/estilo_particulas.css"/>
+        <html:link href='http://fonts.googleapis.com/css?family=Oswald:400,700' />
 
-	<!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-	
-	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="css/style.css">
+        <title>K.I.R.A | EL FUTURO ES NUESTRO</title>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	
-    
+        <html:link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' />
+
+
+        
+        <link href="${pageContext.request.contextPath}css/style.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body>
+        <div id="particles-js"></div>
+        <!-- scripts -->
+        
+
+        <!--FIN DEL CONTENEDOR DE PARTICULAS -->
+
+        <div class="container">
+            <div class="login-box animated fadeInUp">
+                <div class="box-header">
+                    <h2>Log In</h2>
+                </div>
+                <label name="username">Usuario</label>
+                <br/>
+                <input type="text" id="username">
+                <br/>
+                <label name="password">Contraseña</label>
+                <br/>
+                <input type="password" id="password">
+                <br/>
+                <button type="submit">Entrar</button>
+                <br/>
+
+            </div>
+        </div>
+    </body>
+
+
 </html:form>

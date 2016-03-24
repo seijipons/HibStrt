@@ -1,0 +1,25 @@
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family:oswald, helvetica, arial, sans-serif;
+	background: url(../images/cool-wallpaper-1.jpg);
+	background-size:cover;
+	background-attachment: fixed;
+	background-position:0 0px;
+}
+
+#particles-js {
+	width: 100%;
+	height:100%;
+	position: fixed;
+	
+}
+
+
+
