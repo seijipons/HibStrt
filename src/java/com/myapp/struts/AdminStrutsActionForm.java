@@ -116,17 +116,17 @@ public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
     
     
      Integer idEmple;
-     Formapagos formapagos;
-     Tiempopagos tiempopagos;
-     Usuario usuario;
-     String nombre;
-     String apaterno;
-     String amaterno;
-     String fechaNaci;
-     String direccion;
-     String telefono;
-     String fechaContratacion;
-      BigDecimal sueldo;
+     Formapagos formapagos;/*ya*/
+     Tiempopagos tiempopagos;/*ya*/
+     Usuario usuario;/*ya*/
+     String nombre;/*ya*/
+     String apaterno;/*ya*/
+     String amaterno;/*ya*/
+     String fechaNaci;/*ya*/
+     String direccion; /*ya*/
+     String telefono;/*ya*/
+     String fechaContratacion;/*ya*/
+      BigDecimal sueldo;/*ya*/
      
     public AdminStrutsActionForm() {
         super();
@@ -144,6 +144,46 @@ public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
         ActionErrors errors = new ActionErrors();
         if (getNombre()== null) {
             errors.add("nombre", new ActionMessage("error.nombre.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("apaterno", new ActionMessage("error.apaterno.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("amaterno", new ActionMessage("error.amaterno.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("fechaNaci", new ActionMessage("error.fechaNaci.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("direccion", new ActionMessage("error.direccion.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("telefono", new ActionMessage("error.telefono.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("fechaContratacion", new ActionMessage("error.fechaContratacion.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("tiempopagos", new ActionMessage("error.tiempopagos.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("formapagos", new ActionMessage("error.formapagos.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("sueldo", new ActionMessage("error.sueldo.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+        if (getNombre()== null) {
+            errors.add("usuario", new ActionMessage("error.usuario.required"));
             // TODO: add 'error.name.required' key to your resources
         }
         return errors;

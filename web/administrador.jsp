@@ -45,13 +45,14 @@
                         <td class="fuenteadmin">Nombre(s)</td>
                         <td>
                             <html:text property="nombre" value="Nombre(s)" styleClass="tamañoadmin"/>
-                            
+                            <html:errors property="errornombre"/>
                         </td>
                     </tr>
                     <tr>
                         <td class="fuenteadmin">Apellido Paterno</td>
                         <td>
                             <html:text property="apaterno" value="Apellido Paterno" styleClass="tamañoadmin"/>
+                            <html:errors property="errorapellidoap"/>
                         </td>
                     </tr>
                     
@@ -59,6 +60,7 @@
                         <td class="fuenteadmin">Apellido Materno</td>
                         <td>
                             <html:text property="amaterno" value="Apellido Materno" styleClass="tamañoadmin"/>
+                            <html:errors property="errorapellidoma"/>
                         </td>
                     </tr>
 
@@ -67,6 +69,7 @@
                         <td class="fuenteadmin" style="fuenteadmin">Fecha Nacimiento</td>
                         <td>
                             <html:text property="fechaNaci" value="Fecha Nac." styleClass="tamañoadmin"/>
+                            <html:errors property="errorfechanac"/>
                         </td>
                     </tr>
 
@@ -74,6 +77,7 @@
                         <td class="fuenteadmin">Direccion</td>
                         <td>
                             <html:text property="direccion" value="Direccion" styleClass="tamañoadmin"/>
+                            <html:errors property="errordireccion"/>
                         </td>
                     </tr>
 
@@ -81,6 +85,7 @@
                         <td class="fuenteadmin">Telefono:</td>
                         <td>
                             <html:text property="telefono" value="Celular/Casa" styleClass="tamañoadmin"/>
+                            <html:errors property="errortelefono"/>
                         </td>
                     </tr>
 
@@ -88,6 +93,7 @@
                         <td class="fuenteadmin" >Año de Contratacion</td>
                         <td>
                             <html:text property="fechaContratacion" value="Fecha Con." styleClass="tamañoadmin"/>
+                            <html:errors property="errorañocontra"/>
                         </td>
                     </tr>
 
@@ -100,6 +106,8 @@
                                 <html:option value="2" >DECENAL</html:option>
                                 <html:option value="3" >MENSUAL</html:option>
                             </html:select>
+                                
+                               <html:errors property="errortiempopagos" />
                         </td>
                     </tr>
 
@@ -113,6 +121,7 @@
                                 <option value="1" class="tamañoadmin">NOMINA</option>
                                 <option value="2" class="tamañoadmin">HONORARIOS</option>
                             </html:select>
+                               <html:errors property="errorformapagos"/>
                         </td>
                     </tr>
 
@@ -120,6 +129,7 @@
                         <td class="fuenteadmin">Sueldo</td>
                         <td>
                             <html:text property="sueldo" value="Sueldo" styleClass="tamañoadmin"/>
+                            <html:errors property="errorsueldo"/>
                         </td>
                     </tr>
 
@@ -128,7 +138,8 @@
             </table>
 
             <center>
-                <input class="btn btn-primary " type="submit" value="G U A R D A R">
+                <html:submit value="Enviar" styleClass="btn btn-primary"/>
+                
             </center>
         </div>
     </center>
