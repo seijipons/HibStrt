@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/03/2016 07:34:27 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.myapp.struts.Empleados" table="empleados" catalog="proyectoperedo" optimistic-lock="version">
+        <id name="idEmple" type="java.lang.Integer">
+            <column name="idEmple" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="formapagos" class="com.myapp.struts.Formapagos" fetch="select">
+            <column name="idFormaPago" />
+        </many-to-one>
+        <many-to-one name="tiempopagos" class="com.myapp.struts.Tiempopagos" fetch="select">
+            <column name="idTiempoPago" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.myapp.struts.Usuario" fetch="select">
+            <column name="idUser" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="20" />
+        </property>
+        <property name="apaterno" type="string">
+            <column name="aPaterno" length="20" />
+        </property>
+        <property name="amaterno" type="string">
+            <column name="aMaterno" length="20" />
+        </property>
+        <property name="fechaNaci" type="string">
+            <column name="fechaNaci" length="10" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="150" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="15" />
+        </property>
+        <property name="fechaContratacion" type="string">
+            <column name="fechaContratacion" length="10" />
+        </property>
+        <property name="sueldo" type="big_decimal">
+            <column name="sueldo" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>
