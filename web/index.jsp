@@ -13,8 +13,9 @@
         <html:link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' />
 
 
+        <html:link href="css/style.css" />
         
-        <html:link href="${pageContext.request.contextPath}css/style.css" />
+        
 
     </head>
 
