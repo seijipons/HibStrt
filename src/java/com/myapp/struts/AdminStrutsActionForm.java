@@ -19,48 +19,48 @@ import org.apache.struts.action.ActionMessage;
  */
 public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
 
-     Integer idEmple;
-     Formapagos formapagos;/*ya*/
-     Tiempopagos tiempopagos;/*ya*/
-     Usuario usuario;/*ya*/
-     String nombre;/*ya*/
-     String apaterno;/*ya*/
-     String amaterno;/*ya*/
-     String fechaNaci;/*ya*/
-     String direccion; /*ya*/
-     String telefono;/*ya*/
-     String fechaContratacion;/*ya*/
-      BigDecimal sueldo;/*ya*/
+    Integer idEmple;
+    String formapagos;/*ya*/
+    String tiempopagos;/*ya*/
+    String usuario;/*ya*/
+    String nombre;/*ya*/
+    String apaterno;/*ya*/
+    String amaterno;/*ya*/
+    String fechaNaci;/*ya*/
+    String direccion;/*ya*/
+    String telefono;/*ya*/
+    String fechaContratacion;/*ya*/
+    BigDecimal sueldo;/*ya*/
+    public String getFormapagos() {
+        return formapagos;
+    }
+
+    public void setFormapagos(String formapagos) {
+        this.formapagos = formapagos;
+    }
+
+    public String getTiempopagos() {
+        return tiempopagos;
+    }
+
+    public void setTiempopagos(String tiempopagos) {
+        this.tiempopagos = tiempopagos;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    
     public Integer getIdEmple() {
         return idEmple;
     }
 
     public void setIdEmple(Integer idEmple) {
         this.idEmple = idEmple;
-    }
-
-    public Formapagos getFormapagos() {
-        return formapagos;
-    }
-
-    public void setFormapagos(Formapagos formapagos) {
-        this.formapagos = formapagos;
-    }
-
-    public Tiempopagos getTiempopagos() {
-        return tiempopagos;
-    }
-
-    public void setTiempopagos(Tiempopagos tiempopagos) {
-        this.tiempopagos = tiempopagos;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
     public String getNombre() {
