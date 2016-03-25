@@ -17,7 +17,7 @@
     </global-exceptions>
 
     <global-forwards>
-        <forward name="suceessAdmin" path="/successAdm.jsp"/>
+        <forward name="Successadm" path="/successAdm.jsp"/>
         <forward name="failure" path="/failure.jsp"/>
         <forward name="success" path="/success.jsp"/>
         

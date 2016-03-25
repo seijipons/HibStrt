@@ -15,10 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <jsp:useBean id="iva" class="com.myapp.struts.AdminStrutsActionForm"/>
-            <jsp:setProperty name="iva" property="*"/>
-            <h3>Nombre<jsp:getProperty name="iva" property="nombre"/></h3>
-            <h3>Apellido<jsp:getProperty name="iva" property="apellido"/></h3>
+        Insert correcto
     </body>
 </html>
 
