@@ -42,7 +42,7 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         Transaction trx=s.beginTransaction();      
         AdminStrutsActionForm laf=(AdminStrutsActionForm) form; // instaciar de un BEAN
         
-        
+        Usuario us=new Usuario();
         Empleados em=new Empleados();
         
         em.setAmaterno(laf.getAmaterno());
@@ -53,6 +53,16 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         em.setNombre(laf.getNombre());
         em.setSueldo(laf.getSueldo());
         em.setTelefono(laf.getTelefono());
+        
+        
+        //Se crea Usuario y contraseña por automatico
+        String nombreUsuario = laf.getNombreUsuario(em.getNombre(), em.getApaterno());
+        String pass = laf.randomString(8);
+        us.setPass(pass);
+        us.setUsuario(nombreUsuario);
+        //
+        
+        
         /*em.setTiempopagos(tiempopagos);
         em.setFormapagos(formapagos);
         em.setUsuario(usuario);
