@@ -5,11 +5,13 @@
  */
 package com.myapp.struts;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -60,17 +62,24 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         String pass = laf.randomString(8);
         us.setPass(pass);
         us.setUsuario(nombreUsuario);
+        s.save(us);
         //
-        
+        em.setUsuario(us); //Se asigna usuario
         
         /*em.setTiempopagos(tiempopagos);
         em.setFormapagos(formapagos);
         em.setUsuario(usuario);
         */
         
-        String hql="From Empleados p Where id LIKE 'Andres'";
-      /*
+        String hql="From formapagos p Where idFormaPago="+laf.getFormapagos();
         Query query = s.createQuery(hql);
+        List <Formapagos> emps=query.list();
+        
+        for(Formapagos p:emps){
+            
+        }
+      /*
+        
         List<Persona> emps=query.list();
         for(Persona p:emps){
             System.out.println(p.getNombre());
