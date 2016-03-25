@@ -17,12 +17,14 @@
     </global-exceptions>
 
     <global-forwards>
+        <forward name="suceessAdmin" path="/successAdm.jsp"/>
         <forward name="failure" path="/failure.jsp"/>
         <forward name="success" path="/success.jsp"/>
         
     </global-forwards>
 
     <action-mappings>
+        
         <action input="/administrador.jsp" name="AdminStrutsActionForm" path="/admin" scope="session" type="com.myapp.struts.AdminStrutsAction"/>
         <action input="/login.jsp" name="UtilidadesStrutsActionForm" path="/utilidades" scope="session" type="com.myapp.struts.UtilidadesStrutsAction"/>
     </action-mappings>
