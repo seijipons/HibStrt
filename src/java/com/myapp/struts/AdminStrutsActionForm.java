@@ -6,6 +6,7 @@
 package com.myapp.struts;
 
 import java.math.BigDecimal;
+import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
@@ -18,6 +19,18 @@ import org.apache.struts.action.ActionMessage;
  */
 public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
 
+     Integer idEmple;
+     Formapagos formapagos;/*ya*/
+     Tiempopagos tiempopagos;/*ya*/
+     Usuario usuario;/*ya*/
+     String nombre;/*ya*/
+     String apaterno;/*ya*/
+     String amaterno;/*ya*/
+     String fechaNaci;/*ya*/
+     String direccion; /*ya*/
+     String telefono;/*ya*/
+     String fechaContratacion;/*ya*/
+      BigDecimal sueldo;/*ya*/
     public Integer getIdEmple() {
         return idEmple;
     }
@@ -115,24 +128,65 @@ public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
     }
     
     
-     Integer idEmple;
-     Formapagos formapagos;/*ya*/
-     Tiempopagos tiempopagos;/*ya*/
-     Usuario usuario;/*ya*/
-     String nombre;/*ya*/
-     String apaterno;/*ya*/
-     String amaterno;/*ya*/
-     String fechaNaci;/*ya*/
-     String direccion; /*ya*/
-     String telefono;/*ya*/
-     String fechaContratacion;/*ya*/
-      BigDecimal sueldo;/*ya*/
      
     public AdminStrutsActionForm() {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    //Generar acceso
+    
+    String getNombreUsuario(String nombre, String apePat) {
 
+        System.out.println(nombre + " " + apePat);
+        String aRemplazar = nombre;
+        String remplazado = aRemplazar.replace(" ", "");
+        remplazado = remplazado.replace("á", "a");
+        remplazado = remplazado.replace("é", "e");
+        remplazado = remplazado.replace("í", "i");
+        remplazado = remplazado.replace("ó", "o");
+        remplazado = remplazado.replace("ú", "u");
+
+        String aRemplazar2 = apePat;
+        String remplazado2 = aRemplazar2.replace(" ", "");
+
+        remplazado2 = remplazado2.replace("á", "a");
+        remplazado2 = remplazado2.replace("é", "e");
+        remplazado2 = remplazado2.replace("í", "i");
+        remplazado2 = remplazado2.replace("ó", "o");
+        remplazado2 = remplazado2.replace("ú", "u");
+        if (remplazado.length() < 3) {
+            int num = 3 - remplazado.length();
+            remplazado = remplazado + randomString(num);
+        }
+        if (remplazado2.length() < 4) {
+            int num2 = 4 - remplazado2.length();
+            remplazado2 = remplazado2 + randomString(num2);
+        }
+
+        String nombreUsuario, apellido = remplazado2;
+
+        int i = 0;
+
+        nombreUsuario = "" + remplazado.charAt(0) + remplazado.charAt(1) + remplazado.charAt(2) + apellido.charAt(0) + apellido.charAt(1) + apellido.charAt(2) + apellido.charAt(3);
+
+        return nombreUsuario;
+
+    }
+
+    //Random String
+     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    static Random rnd = new Random();
+
+    String randomString(int len) {
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++) {
+            sb.append(AB.charAt(rnd.nextInt(AB.length())));
+        }
+        return sb.toString();
+    }
+    
+    // end random string
     /**
      * This is the action called from the Struts framework.
      *
