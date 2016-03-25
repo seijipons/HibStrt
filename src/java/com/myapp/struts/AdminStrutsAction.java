@@ -22,7 +22,7 @@ import org.hibernate.Transaction;
 public class AdminStrutsAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+    private static final String SUCCESS = "successAdmin";
 
     /**
      * This is the action called from the Struts framework.
@@ -65,34 +65,26 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         s.save(us);
         //
         em.setUsuario(us); //Se asigna usuario
-        
-        /*em.setTiempopagos(tiempopagos);
-        em.setFormapagos(formapagos);
-        em.setUsuario(usuario);
-        */
-        
-        String hql="From formapagos p Where idFormaPago="+laf.getFormapagos();
+               
+        String hql="From Formapagos p Where idFormaPago="+laf.getFormapagos();
         Query query = s.createQuery(hql);
         List <Formapagos> emps=query.list();
-        
+        Formapagos forma=null;
         for(Formapagos p:emps){
-            
+            forma=p;
         }
-      /*
+        em.setFormapagos(forma);
         
-        List<Persona> emps=query.list();
-        for(Persona p:emps){
-            System.out.println(p.getNombre());
-            System.out.println(p.getFechanacimiento());
-            System.out.println(p.getDireccion().getColonia());
-            System.out.println(p.getDireccion().getColonia());
-            System.out.println(p.getDireccion().getCodigopostal());
+        hql="From Tiempopagos p Where idTiempoPago="+laf.getTiempopagos();
+        query = s.createQuery(hql);
+        List <Tiempopagos> tmp=query.list();
+        Tiempopagos tiempo=null;
+        for(Tiempopagos q:tmp){
+            tiempo=q;
         }
+        em.setTiempopagos(tiempo);
         
-        */
-//        em.setTiemposervicio(laf.getTiempo());
-//        em.setCargo(laf.getCargo());
-//        em.setMonto(laf.getMonto());
+      
         s.save(em);
         trx.commit();
         
