@@ -22,7 +22,7 @@ import org.hibernate.Transaction;
 public class AdminStrutsAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "successAdmin";
+    private static final String SUCCESSADMIN = "successAdmin";
 
     /**
      * This is the action called from the Struts framework.
@@ -89,6 +89,6 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         trx.commit();
         
         s.close();
-        return mapping.findForward(SUCCESS);
+        return mapping.findForward(SUCCESSADMIN);
     }
 }
