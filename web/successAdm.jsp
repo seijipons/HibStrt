@@ -16,6 +16,8 @@
     </head>
     <body>
         Insert correcto
+        Redireccionamiento en 3 seg. 
+        <META HTTP-EQUIV="REFRESH" CONTENT="3;URL=administrador.jsp"> 
     </body>
 </html>
 

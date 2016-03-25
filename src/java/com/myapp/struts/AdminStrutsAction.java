@@ -21,7 +21,10 @@ import org.hibernate.Transaction;
  */
 public class AdminStrutsAction extends org.apache.struts.action.Action {
 
-    /* forward name="success" path="" */
+    /* forward name="success" path=""  pero osea hace rato estaban igual 
+    si, pero no se que paso... creo que habia alguna diferencia y solo le pusiste otros nombres y ya 
+    shi ok ok 
+    */
     private static final String SUCCESSADMIN = "Successadm";
 
     /**
