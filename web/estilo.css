@@ -56,7 +56,7 @@
 
 .font {
     font-family: 'Poiret One', cursive;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .color1 {
@@ -145,4 +145,22 @@
     color: black;
     padding-top: 1%;
     font-size: 30px;
+}
+
+.color2 {
+     background-color: #F1F2EB;
+    width: 90%;
+    padding-bottom: 2%;
+}
+
+.espacio1 {
+ padding-right: 5%;
+}
+
+#campo2 {
+     background-color: #049DBF;
+    width: 90%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: serif;
 }
