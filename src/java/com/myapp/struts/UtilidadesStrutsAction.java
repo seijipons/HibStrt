@@ -40,13 +40,13 @@ ResultSet result=null;
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        
-        Session s;
-        s=NewHibernateUtil.getSessionFactory().openSession();
-        Transaction trx=s.beginTransaction();      
-        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
-        Usuario us = new Usuario();
-        
+//        
+//        Session s;
+//        s=NewHibernateUtil.getSessionFactory().openSession();
+//        Transaction trx=s.beginTransaction();      
+//        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
+//        Usuario us = new Usuario();
+//        
         
         return mapping.findForward(SUCCESS);
     }

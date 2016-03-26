@@ -1,5 +1,5 @@
 package com.myapp.struts;
-// Generated 23/03/2016 07:34:26 PM by Hibernate Tools 4.3.1
+// Generated 25/03/2016 07:07:07 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;

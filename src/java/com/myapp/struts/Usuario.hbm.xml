@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/03/2016 07:34:27 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 25/03/2016 07:07:10 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.myapp.struts.Usuario" table="usuario" catalog="proyectoperedo" optimistic-lock="version">
         <id name="idUser" type="java.lang.Integer">
             <column name="idUser" />
             <generator class="identity" />
         </id>
+        <many-to-one name="roles" class="com.myapp.struts.Roles" fetch="select">
+            <column name="idrol" not-null="true" />
+        </many-to-one>
         <property name="usuario" type="string">
             <column name="usuario" length="20" />
         </property>

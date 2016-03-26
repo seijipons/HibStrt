@@ -31,6 +31,16 @@ public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
     String telefono;/*ya*/
     String fechaContratacion;/*ya*/
     BigDecimal sueldo;/*ya*/
+    Integer rol;
+    
+    public Integer getRol() {
+        return rol;
+    }
+
+    public void setRol(Integer rol) {
+        this.rol = rol;
+    }
+    
     public String getFormapagos() {
         return formapagos;
     }

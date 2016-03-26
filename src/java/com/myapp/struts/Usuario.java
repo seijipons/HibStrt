@@ -1,5 +1,5 @@
 package com.myapp.struts;
-// Generated 23/03/2016 07:34:26 PM by Hibernate Tools 4.3.1
+// Generated 25/03/2016 07:07:07 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,6 +12,7 @@ public class Usuario  implements java.io.Serializable {
 
 
      private Integer idUser;
+     private Roles roles;
      private String usuario;
      private String pass;
      private Set empleadoses = new HashSet(0);
@@ -19,7 +20,12 @@ public class Usuario  implements java.io.Serializable {
     public Usuario() {
     }
 
-    public Usuario(String usuario, String pass, Set empleadoses) {
+	
+    public Usuario(Roles roles) {
+        this.roles = roles;
+    }
+    public Usuario(Roles roles, String usuario, String pass, Set empleadoses) {
+       this.roles = roles;
        this.usuario = usuario;
        this.pass = pass;
        this.empleadoses = empleadoses;
@@ -31,6 +37,13 @@ public class Usuario  implements java.io.Serializable {
     
     public void setIdUser(Integer idUser) {
         this.idUser = idUser;
+    }
+    public Roles getRoles() {
+        return this.roles;
+    }
+    
+    public void setRoles(Roles roles) {
+        this.roles = roles;
     }
     public String getUsuario() {
         return this.usuario;

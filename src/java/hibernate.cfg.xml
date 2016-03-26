@@ -6,9 +6,10 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyectoperedo?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
+    <mapping resource="com/myapp/struts/Empleados.hbm.xml"/>
+    <mapping resource="com/myapp/struts/Roles.hbm.xml"/>
     <mapping resource="com/myapp/struts/Formapagos.hbm.xml"/>
     <mapping resource="com/myapp/struts/Tiempopagos.hbm.xml"/>
     <mapping resource="com/myapp/struts/Usuario.hbm.xml"/>
-    <mapping resource="com/myapp/struts/Empleados.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

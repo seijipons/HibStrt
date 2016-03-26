@@ -16,15 +16,12 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- *
+ *asdasd 
  * @author Ivan
  */
 public class AdminStrutsAction extends org.apache.struts.action.Action {
 
-    /* forward name="success" path=""  pero osea hace rato estaban igual 
-    si, pero no se que paso... creo que habia alguna diferencia y solo le pusiste otros nombres y ya 
-    shi ok ok 
-    */
+    /* forward name="success" path="" */
     private static final String SUCCESSADMIN = "Successadm";
 
     /**
@@ -65,12 +62,22 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         String pass = laf.randomString(8);
         us.setPass(pass);
         us.setUsuario(nombreUsuario);
+        
+        String hql="From Roles p Where idrol="+laf.getRol();
+        Query query=s.createQuery(hql);
+        List <Roles> rol=query.list();
+        Roles roles=null;
+        for(Roles r:rol){
+            roles=r;
+        }
+        us.setRoles(roles);
+               
         s.save(us);
-        //
+        
         em.setUsuario(us); //Se asigna usuario
                
-        String hql="From Formapagos p Where idFormaPago="+laf.getFormapagos();
-        Query query = s.createQuery(hql);
+        hql="From Formapagos p Where idFormaPago="+laf.getFormapagos();
+        query = s.createQuery(hql);
         List <Formapagos> emps=query.list();
         Formapagos forma=null;
         for(Formapagos p:emps){

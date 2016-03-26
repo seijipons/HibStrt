@@ -132,6 +132,18 @@
                             <html:errors property="errorsueldo"/>
                         </td>
                     </tr>
+                    
+                    <tr>
+                        <td class="fuenteadmin" style="tamañoadmin">Tipo de Empleado</td>
+                        <td>
+                            <html:select property="rol" styleClass="tamañoadmin">
+                                <option value="0" class="tamañoadmin">SELECCIONA TIPO DE EMPLEADO</option>
+                                <option value="2" class="tamañoadmin">EMPLEADO</option>
+                                <option value="1" class="tamañoadmin">ADMINISTRADOR</option>
+                            </html:select>
+                               <html:errors property="errorformapagos"/>
+                        </td>
+                    </tr>
 
 
                 </tbody>
