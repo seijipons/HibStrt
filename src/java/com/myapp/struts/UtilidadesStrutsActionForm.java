@@ -16,7 +16,9 @@ import org.apache.struts.action.ActionMessage;
  * @author SeijiPons
  */
 public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionForm {
-
+    
+    
+    
      String usuario,password;
 
     public String getUsuario() {

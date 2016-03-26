@@ -21,10 +21,13 @@
     </head>
 
     <body class="abajo">
+        <jsp:useBean id="iva" class="com.myapp.struts.UtilidadesStrutsActionForm"/>
+        <jsp:setProperty name="iva" property="*"/>       
+        
         <html:form action="/admin" method="post">
         <nav class="navegacion">
-            <a href="" class="a">CERRAR SESION</a>
-            <a class="a derecha">BIENVENIDO: NOMBRE DE ADMINISTRADOR</a>
+            <a href="login.jsp" class="a">CERRAR SESION</a>
+            <a class="a derecha">BIENVENIDO: <jsp:getProperty name="iva" property="usuario"/></a>
         </nav>
         
         <div class="abajo1">

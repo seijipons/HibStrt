@@ -66,18 +66,47 @@ public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
         String hql = "FROM Usuario WHERE usuario LIKE '"+laf.getUsuario()+"' and pass LIKE '"+laf.getPassword()+"'";
         Query query = s.createQuery(hql);
         List<Usuario> usuario = query.list();
+        int cont=0;
         Usuario us=new Usuario();
         for(Usuario e:usuario){
             System.out.println(e.getUsuario()+"_"+e.getPass()+" "+e.getRoles().getIdrol());
             System.out.println("Entró a For");
             us=e;
+            cont++;
         }
-        System.out.println(laf.getPassword());
-        
-        if(us.getRoles().getIdrol()==1){
-            FWD=ADMINISTRADOR;
-            
+        if(cont==0){
+            FWD = "failure";
+        }else{
+            if (null != us.getRoles().getIdrol()) {
+            switch (us.getRoles().getIdrol()) {
+                case 1:
+                    FWD = ADMINISTRADOR;
+                    break;
+                case 2:
+                    FWD = "success";
+                    break;
+                default:
+                    FWD = "failure";
+                    break;
+            }
         }
+        }
+//        
+//        System.out.println(laf.getPassword());
+//        if (us == null) {
+//            FWD = "failure";
+//        } else if (null != us.getRoles().getIdrol()) {
+//            switch (us.getRoles().getIdrol()) {
+//                case 1:
+//                    FWD = ADMINISTRADOR;
+//                    break;
+//                case 2:
+//                    break;
+//                default:
+//                    FWD = "failure";
+//                    break;
+//            }
+//        }
         return mapping.findForward(FWD); 
     }
          
