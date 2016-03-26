@@ -6,11 +6,13 @@
 package com.myapp.struts;
 
 import java.sql.ResultSet;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.hibernate.Query;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -21,10 +23,13 @@ import org.hibernate.Transaction;
  */
 public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
 
-ResultSet result=null;
+    
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-
+    ResultSet resultado = null;
+    private static final String ADMINISTRADOR = "Administrador";
+    String FWD="success";
+    
+    
     /**
      * This is the action called from the Struts framework.
      *
@@ -40,15 +45,40 @@ ResultSet result=null;
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-//        
-//        Session s;
-//        s=NewHibernateUtil.getSessionFactory().openSession();
-//        Transaction trx=s.beginTransaction();      
-//        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
-//        Usuario us = new Usuario();
-//        
         
-        return mapping.findForward(SUCCESS);
+        
+        
+        Session s;
+        s=NewHibernateUtil.getSessionFactory().openSession();
+        Transaction trx=s.beginTransaction();      
+        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
+        
+      
+
+
+//String hql ="FROM Emp e WHERE e.dept.loc = 'US' ";
+//Query query = s.createQuery(hql);
+//List<Emp> emps = query.list();
+//for(Emp e:emps){
+//    System.out.println(e.getEname()+"__"+e.getDept().getLoc());
+//}
+
+        String hql = "FROM Usuario WHERE usuario LIKE '"+laf.getUsuario()+"' and pass LIKE '"+laf.getPassword()+"'";
+        Query query = s.createQuery(hql);
+        List<Usuario> usuario = query.list();
+        Usuario us=new Usuario();
+        for(Usuario e:usuario){
+            System.out.println(e.getUsuario()+"_"+e.getPass()+" "+e.getRoles().getIdrol());
+            System.out.println("Entró a For");
+            us=e;
+        }
+        System.out.println(laf.getPassword());
+        
+        if(us.getRoles().getIdrol()==1){
+            FWD=ADMINISTRADOR;
+            
+        }
+        return mapping.findForward(FWD); 
     }
          
 }

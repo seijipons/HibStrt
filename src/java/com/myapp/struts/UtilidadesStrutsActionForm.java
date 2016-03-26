@@ -17,7 +17,7 @@ import org.apache.struts.action.ActionMessage;
  */
 public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionForm {
 
-   String usuario,password;
+     String usuario,password;
 
     public String getUsuario() {
         return usuario;
@@ -34,7 +34,9 @@ public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionF
     public void setPassword(String password) {
         this.password = password;
     }
+
    
+
     
     /**
      * @return
@@ -57,7 +59,7 @@ public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionF
             errors.add("usuario", new ActionMessage("error.usuarioerror.required"));
             // TODO: add 'error.name.required' key to your resources
         }
-        if (getPassword()== null) {
+        if (getPassword()== null) { 
             errors.add("password", new ActionMessage("error.passworderror.required"));
             // TODO: add 'error.name.required' key to your resources
         }

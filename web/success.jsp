@@ -14,8 +14,8 @@
     <body>
         <jsp:useBean id="iva" class="com.myapp.struts.UtilidadesStrutsActionForm"/>
             <jsp:setProperty name="iva" property="*"/>
-            <h3>precio:<jsp:getProperty name="iva" property="cargo"/></h3>
-            <h3>total:<jsp:getProperty name="iva" property="monto"/></h3>
+            <h3>precio:<jsp:getProperty name="iva" property="usuario"/></h3>
+            <h3>total:<jsp:getProperty name="iva" property="password"/></h3>
         
     </body>
 </html>
