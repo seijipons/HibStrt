@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/03/2016 10:50:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.myapp.struts.Nominas" table="nominas" catalog="proyectoperedo" optimistic-lock="version">
+        <id name="idNomina" type="java.lang.Integer">
+            <column name="idNomina" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empleados" class="com.myapp.struts.Empleados" fetch="select">
+            <column name="idEmple" not-null="true" />
+        </many-to-one>
+        <property name="sueldoBruto" type="big_decimal">
+            <column name="sueldoBruto" precision="10" />
+        </property>
+        <property name="isr" type="big_decimal">
+            <column name="ISR" precision="10" />
+        </property>
+        <property name="ssm" type="big_decimal">
+            <column name="ssm" precision="10" />
+        </property>
+        <property name="infonavit" type="big_decimal">
+            <column name="infonavit" precision="10" />
+        </property>
+        <property name="subTotal" type="big_decimal">
+            <column name="subTotal" precision="10" />
+        </property>
+        <property name="sueldoNeto" type="big_decimal">
+            <column name="sueldoNeto" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

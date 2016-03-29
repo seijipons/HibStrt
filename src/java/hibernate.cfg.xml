@@ -9,6 +9,7 @@
     <mapping resource="com/myapp/struts/Empleados.hbm.xml"/>
     <mapping resource="com/myapp/struts/Roles.hbm.xml"/>
     <mapping resource="com/myapp/struts/Formapagos.hbm.xml"/>
+    <mapping resource="com/myapp/struts/Nominas.hbm.xml"/>
     <mapping resource="com/myapp/struts/Tiempopagos.hbm.xml"/>
     <mapping resource="com/myapp/struts/Usuario.hbm.xml"/>
   </session-factory>
