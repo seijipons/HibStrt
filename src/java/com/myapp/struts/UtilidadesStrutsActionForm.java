@@ -5,11 +5,15 @@
  */
 package com.myapp.struts;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -37,9 +41,6 @@ public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionF
         this.password = password;
     }
 
-   
-
-    
     /**
      * @return
      */
@@ -56,10 +57,34 @@ public class UtilidadesStrutsActionForm extends org.apache.struts.action.ActionF
      * @return
      */
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+        
         ActionErrors errors = new ActionErrors();
+        
+        Session s;
+        s=NewHibernateUtil.getSessionFactory().openSession();
+        Transaction trx=s.beginTransaction();      
+                
+        String hql = "FROM Usuario WHERE usuario LIKE '"+getUsuario()+"' and pass LIKE '"+getPassword()+"'";
+        Query query = s.createQuery(hql);
+        List<Usuario> usuario = query.list();
+        int cont=0;
+        Usuario us=new Usuario();
+        for(Usuario e:usuario){
+            
+            us=e;
+            cont++;
+        }
+        
+//        if (cont == 0) {
+//            //errors.add(ActionErrors.GLOBAL_MESSAGE, new ActionError("error.bad.input",)); 
+//            errors.add("usuario", new ActionMessage("error.loginerror.required"));
+//
+//        }
         if (getUsuario()== null) {
             errors.add("usuario", new ActionMessage("error.usuarioerror.required"));
-            // TODO: add 'error.name.required' key to your resources
+            
+            //activa el microfono papu
+            // TODO: add 'error.name.required' key to your resources 
         }
         if (getPassword()== null) { 
             errors.add("password", new ActionMessage("error.passworderror.required"));

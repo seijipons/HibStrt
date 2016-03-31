@@ -53,30 +53,18 @@ public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
         Transaction trx=s.beginTransaction();      
         UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
         
-      
-
-
-//String hql ="FROM Emp e WHERE e.dept.loc = 'US' ";
-//Query query = s.createQuery(hql);
-//List<Emp> emps = query.list();
-//for(Emp e:emps){
-//    System.out.println(e.getEname()+"__"+e.getDept().getLoc());
-//}
-
         String hql = "FROM Usuario WHERE usuario LIKE '"+laf.getUsuario()+"' and pass LIKE '"+laf.getPassword()+"'";
         Query query = s.createQuery(hql);
         List<Usuario> usuario = query.list();
-        int cont=0;
+        
         Usuario us=new Usuario();
         for(Usuario e:usuario){
             System.out.println(e.getUsuario()+"_"+e.getPass()+" "+e.getRoles().getIdrol());
             System.out.println("Entró a For");
             us=e;
-            cont++;
+            
         }
-        if(cont==0){
-            FWD = "failure";
-        }else{
+        
             if (null != us.getRoles().getIdrol()) {
             switch (us.getRoles().getIdrol()) {
                 case 1:
@@ -90,23 +78,8 @@ public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
                     break;
             }
         }
-        }
-//        
-//        System.out.println(laf.getPassword());
-//        if (us == null) {
-//            FWD = "failure";
-//        } else if (null != us.getRoles().getIdrol()) {
-//            switch (us.getRoles().getIdrol()) {
-//                case 1:
-//                    FWD = ADMINISTRADOR;
-//                    break;
-//                case 2:
-//                    break;
-//                default:
-//                    FWD = "failure";
-//                    break;
-//            }
-//        }
+       
+
         return mapping.findForward(FWD); 
     }
          

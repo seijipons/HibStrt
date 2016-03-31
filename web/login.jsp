@@ -42,7 +42,10 @@
                     <html:password property="password"></html:password>
                     <html:errors property="passworderror"/>
                     <br/>
-                    <html:submit value="ENTRAR"/>
+                    
+                    
+                    <html:submit property ="login" value="ENTRAR"/>
+                    <html:errors property="loginerror"/>
                     <br/>
                 </div>
             </div>
