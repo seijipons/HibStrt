@@ -94,6 +94,7 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         }
         em.setTiempopagos(tiempo);
         
+        
       
         s.save(em);
         trx.commit();

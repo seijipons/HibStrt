@@ -9,7 +9,7 @@
 }
 
 .abajo {
-    background-image: url(Downloaded/grande.jpg);    
+    background-image: url(Downloaded/back1.jpg);    
 }
 
 .color {
@@ -45,7 +45,7 @@
 
 
 .espacio {
-    padding-right:25%;
+    padding-right: 25%;
     
 }
 
@@ -61,10 +61,10 @@
 }
 
 #campo1 {
-     background-color: #049DBF;
+     background-color: #963F35;
+    width:70%;
     font-family: serif;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    border-radius: 5px;
 }
 
 
@@ -72,15 +72,15 @@
 
 
 .abajo1 {
-    width: 70%;
-   padding-top: 5%;
+    padding-top: 1%;
+    padding-left: 45.2%;
 }
 
 
 
 .navegacion {
     padding: 10px;
-    background-color: #049DBF;
+    background-color: #963F35;
     border-radius: 3px;
 }
 
