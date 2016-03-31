@@ -37,15 +37,19 @@
 }
 
 
+
+
+
+
+
 .vete {
-    width: 60px;
-    height: 60px;
+    padding-left: 50%;
 }
 
 
 
 .espacio {
-    padding-right:25%;
+    padding-right: 10%;
     
 }
 
@@ -56,15 +60,17 @@
 
 .color1 {
      background-color: #F1F2EB;
-    width: 70%;
+    width: 60%;
+    
     padding-bottom: 5%;
 }
 
 #campo1 {
      background-color: #049DBF;
-    font-family: serif;
+    width: 60%;
     padding-top: 1px;
     padding-bottom: 1px;
+    font-family: serif;
 }
 
 
@@ -72,8 +78,7 @@
 
 
 .abajo1 {
-    width: 70%;
-   padding-top: 5%;
+    padding-top: 10%;
 }
 
 
@@ -81,7 +86,7 @@
 .navegacion {
     padding: 10px;
     background-color: #049DBF;
-    border-radius: 3px;
+    
 }
 
 .a {
@@ -121,7 +126,7 @@
 }
 
 .derecha {
-    padding-left: 70%;
+    padding-left: 80%;
 }
 
 .fuenteadmin {
@@ -157,12 +162,4 @@
     padding-top: 1px;
     padding-bottom: 1px;
     font-family: serif;
-}
-
-.td{
-    max-width: 20px; 
-}
-
-.espacio2 {
-    padding-right: 75%;
 }
