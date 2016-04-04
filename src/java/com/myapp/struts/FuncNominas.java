@@ -148,6 +148,12 @@ public class FuncNominas {
     
     // Main para hacer pruebas
     
+    public double getIva(Empleados emp){
+        double iva=0;
+        
+        return 0;
+    }
+    
     public static void main(String[] args) {
         FuncNominas ob = new FuncNominas();
 //        
@@ -156,11 +162,13 @@ public class FuncNominas {
         
 //        
         double SalarioMinimo=73.04;
+        System.out.println ("Sueldo bruto: " + 10000);
+        System.out.println ("Tiempo de pago: " + "Mensual");
+        System.out.println ("Dias de vacaciones: " + ob.diasVacaciones("2015/02/04"));
         
-        System.out.println ("Days: " + ob.diasVacaciones("2015/02/04"));
         String fecha="2015/02/04";
         int dias=ob.diasVacaciones("2015/02/04");
-        double salDiario=ob.salarioDiario(3500,"Mensual");
+        double salDiario=ob.salarioDiario(10000,"Mensual");
         double pv=ob.primaVacacional(salDiario, dias);
         int anosAntiguedad=ob.anosAntiguedad(fecha);//años antiguedad
         double aguinaldo=ob.aguinaldo(salDiario);
@@ -169,15 +177,20 @@ public class FuncNominas {
         double sb=salDiario+aguiDiario+pvd;
         
         
-        System.out.println ("Salario base: "+sb);
+        System.out.println ("Salario base diario: "+sb);
         
         double difSb3SM=sb-(SalarioMinimo*3);
         difSb3SM=Math.abs(difSb3SM);
         System.out.println ("dif: "+difSb3SM); 
-        System.out.println("enfermedades: "+ob.enfermedades(difSb3SM,sb,"Mensual"));
+        System.out.println("Descuento S. S.: "+ob.enfermedades(difSb3SM,sb,"Mensual"));
         
-        
+        double infonavit=ob.infonavit(sb, "Mensual");
+        double enf=ob.enfermedades(difSb3SM,sb,"Mensual");
+        double sub=enf+infonavit;
         System.out.println("Infonavit: "+ob.infonavit(sb, "Mensual"));
+        System.out.println("Subtotal: "+sub);
+        double net=10000-sub;
+        System.out.println("Sueldo neto: "+net);
         // TODO code application logic here
     }
 }
