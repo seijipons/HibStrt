@@ -146,14 +146,14 @@ public class FuncNominas {
     
     
     
-    // Main para hacer pruebas
+    
     
     public double getIva(Empleados emp){
         double iva=0;
         
         return 0;
     }
-    
+    // Main para hacer pruebas
     public static void main(String[] args) {
         FuncNominas ob = new FuncNominas();
 //        

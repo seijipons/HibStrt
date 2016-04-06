@@ -51,7 +51,7 @@ public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
         Session s;
         s=NewHibernateUtil.getSessionFactory().openSession();
         Transaction trx=s.beginTransaction();      
-        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEA
+        UtilidadesStrutsActionForm laf=(UtilidadesStrutsActionForm) form; // instaciar de un BEAN
         
         String hql = "FROM Usuario WHERE usuario LIKE '"+laf.getUsuario()+"' and pass LIKE '"+laf.getPassword()+"'";
         Query query = s.createQuery(hql);
@@ -59,8 +59,7 @@ public class UtilidadesStrutsAction extends org.apache.struts.action.Action {
         
         Usuario us=new Usuario();
         for(Usuario e:usuario){
-            System.out.println(e.getUsuario()+"_"+e.getPass()+" "+e.getRoles().getIdrol());
-            System.out.println("Entró a For");
+            
             us=e;
             
         }

@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="BusquedaActionForm" type="com.myapp.struts.BusquedaActionForm"/>
         <form-bean name="AdminStrutsActionForm" type="com.myapp.struts.AdminStrutsActionForm"/>
         <form-bean name="UtilidadesStrutsActionForm" type="com.myapp.struts.UtilidadesStrutsActionForm"/>
     
