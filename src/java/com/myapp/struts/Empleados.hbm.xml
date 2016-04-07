@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28/03/2016 10:50:46 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 6/04/2016 07:23:26 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.myapp.struts.Empleados" table="empleados" catalog="proyectoperedo" optimistic-lock="version">
         <id name="idEmple" type="java.lang.Integer">
@@ -38,7 +38,7 @@
         <property name="fechaContratacion" type="string">
             <column name="fechaContratacion" length="10" />
         </property>
-        <property name="sueldo" type="big_decimal">
+        <property name="sueldo" type="java.lang.Double">
             <column name="sueldo" precision="10" />
         </property>
         <set name="nominases" table="nominas" inverse="true" lazy="true" fetch="select">

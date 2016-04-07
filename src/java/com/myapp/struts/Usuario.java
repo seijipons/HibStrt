@@ -1,5 +1,5 @@
 package com.myapp.struts;
-// Generated 28/03/2016 10:50:46 PM by Hibernate Tools 4.3.1
+// Generated 6/04/2016 07:23:24 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

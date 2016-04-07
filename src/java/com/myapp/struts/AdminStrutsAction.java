@@ -5,6 +5,7 @@
  */
 package com.myapp.struts;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,7 +47,7 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         
         Usuario us=new Usuario();
         Empleados em=new Empleados();
-        
+        Nominas nom=new Nominas();
         em.setAmaterno(laf.getAmaterno());
         em.setApaterno(laf.getApaterno());
         em.setDireccion(laf.getDireccion());
@@ -94,11 +95,43 @@ public class AdminStrutsAction extends org.apache.struts.action.Action {
         }
         em.setTiempopagos(tiempo);
         
-        
-      
+        nom.setEmpleados(em);
+//        if (em.getFormapagos().getFormaPago().compareToIgnoreCase("Nomina") == 0) {
+//            FuncNominas ob = new FuncNominas();
+//            
+//            double SalarioMinimo = 73.04;
+//            BigDecimal sueldoBruto=em.getSueldo();
+//            String tiempoPago=em.getTiempopagos().getTipoPago();
+//            String fechacontrato=em.getFechaContratacion();
+//            int diasVacaciones=ob.diasVacaciones(fechacontrato);
+//            
+//            double salDiario = ob.salarioDiario(sueldoBruto, "Mensual");
+//            double pv = ob.primaVacacional(salDiario, dias);
+//            int anosAntiguedad = ob.anosAntiguedad(fecha);//años antiguedad
+//            double aguinaldo = ob.aguinaldo(salDiario);
+//            double pvd = pv / 360;
+//            double aguiDiario = aguinaldo / 360;
+//            double sb = salDiario + aguiDiario + pvd;
+//
+//            System.out.println("Salario base diario: " + sb);
+//
+//            double difSb3SM = sb - (SalarioMinimo * 3);
+//            difSb3SM = Math.abs(difSb3SM);
+//            System.out.println("dif: " + difSb3SM);
+//            System.out.println("Descuento S. S.: " + ob.enfermedades(difSb3SM, sb, "Mensual"));
+//
+//            double infonavit = ob.infonavit(sb, "Mensual");
+//            double enf = ob.enfermedades(difSb3SM, sb, "Mensual");
+//            double sub = enf + infonavit;
+//            System.out.println("Infonavit: " + ob.infonavit(sb, "Mensual"));
+//            System.out.println("Subtotal: " + sub);
+//            double net = 10000 - sub;
+//            System.out.println("Sueldo neto: " + net);
+//        }
+
         s.save(em);
         trx.commit();
-        
+
         s.close();
         return mapping.findForward(SUCCESSADMIN);
     }

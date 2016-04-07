@@ -30,7 +30,7 @@ public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
     String direccion;/*ya*/
     String telefono;/*ya*/
     String fechaContratacion;/*ya*/
-    BigDecimal sueldo;/*ya*/
+    Double sueldo;/*ya*/
     Integer rol;
     
     public Integer getRol() {
@@ -129,11 +129,11 @@ public class AdminStrutsActionForm extends org.apache.struts.action.ActionForm {
         this.fechaContratacion = fechaContratacion;
     }
 
-    public BigDecimal getSueldo() {
+    public double getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(BigDecimal sueldo) {
+    public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
     

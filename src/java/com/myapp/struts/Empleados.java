@@ -1,8 +1,7 @@
 package com.myapp.struts;
-// Generated 28/03/2016 10:50:46 PM by Hibernate Tools 4.3.1
+// Generated 6/04/2016 07:23:24 PM by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,13 +22,13 @@ public class Empleados  implements java.io.Serializable {
      private String direccion;
      private String telefono;
      private String fechaContratacion;
-     private BigDecimal sueldo;
+     private Double sueldo;
      private Set nominases = new HashSet(0);
 
     public Empleados() {
     }
 
-    public Empleados(Formapagos formapagos, Tiempopagos tiempopagos, Usuario usuario, String nombre, String apaterno, String amaterno, String fechaNaci, String direccion, String telefono, String fechaContratacion, BigDecimal sueldo, Set nominases) {
+    public Empleados(Formapagos formapagos, Tiempopagos tiempopagos, Usuario usuario, String nombre, String apaterno, String amaterno, String fechaNaci, String direccion, String telefono, String fechaContratacion, Double sueldo, Set nominases) {
        this.formapagos = formapagos;
        this.tiempopagos = tiempopagos;
        this.usuario = usuario;
@@ -121,11 +120,11 @@ public class Empleados  implements java.io.Serializable {
     public void setFechaContratacion(String fechaContratacion) {
         this.fechaContratacion = fechaContratacion;
     }
-    public BigDecimal getSueldo() {
+    public Double getSueldo() {
         return this.sueldo;
     }
     
-    public void setSueldo(BigDecimal sueldo) {
+    public void setSueldo(Double sueldo) {
         this.sueldo = sueldo;
     }
     public Set getNominases() {
